@@ -29,7 +29,7 @@ class GenerateCommand extends ContainerAwareCommand
         $sitemap = new \DOMDocument('1.0', 'utf-8');
         $sitemap->preserveWhiteSpace = false;
         $sitemap->formatOutput = true;
-        $urlSet = $sitemap->createElement('urlset');
+        $urlSet = $sitemap->createElementNS('http://www.sitemaps.org/schemas/sitemap/0.9','urlset');
         $sitemap->appendChild($urlSet);
 
         $hostname = $container->getParameter('blend_ez_sitemap.main_url');
